@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    
+    
+</head>
+<body>
+    <header>
+       <div class="container">
+        <div id="brandname">
+              Machine Learning App with Flask
+        </div>
+        <h2>Classification de texte BBC à l'aide de classificateurs NLP</h2>
+       </div>
+       </header>
+       
+	   <!-- Main Input For Receiving Query to our ML -->
+       <div class="ml-container">
+           <form action="{{ url_for('predict')}}" method="POST">
+            <p>Saisissez votre texte/Message Here</p>
+            <!-- <input type="text" name="comment"/> -->
+            <textarea name="message" rows="6" cols="50"></textarea>
+            <br/>
+            <input type="submit" class="btn-info" value="predict">
+         </form>
+       
+        {{ prediction_text }}
+        
+       </div>
+</body>
+</html>
